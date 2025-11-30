@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyurWell - AI Wellness Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>AyurWell</h1>
+            </div>
+            <p class="subtitle">Your AI Companion for Ayurveda & Wellness</p>
+        </header>
+
+        <main class="chat-container">
+            <div id="chat-history" class="chat-history">
+                <div class="message bot-message">
+                    <div class="avatar"><i class="fas fa-robot"></i></div>
+                    <div class="content">Namaste! I am AyurWell. How can I assist you on your wellness journey today?</div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="input-area">
+            <div class="input-wrapper">
+                <label for="image-upload" class="upload-btn">
+                    <i class="fas fa-image"></i>
+                </label>
+                <input type="file" id="image-upload" accept="image/*" hidden>
+                <input type="text" id="user-input" placeholder="Ask about Ayurveda, herbs, or upload an image..." autocomplete="off">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div id="image-preview-container" class="hidden">
+                <img id="image-preview" src="" alt="Preview">
+                <button id="remove-image"><i class="fas fa-times"></i></button>
+            </div>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
